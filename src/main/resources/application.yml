@@ -1,0 +1,35 @@
+#server configs port
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+    path: /error
+#  ssl:
+#    key-store: file:///home/david/IdeaProjects/taco-cloud/mykeys.jks
+#    key-store-password: letmein
+#    key-password: ${server.ssl.key-store-password}
+
+# spring config
+spring:
+  data:
+    rest:
+      base-path: /api
+
+#logging config
+logging:
+  file:
+    name: TacoCLoud.log
+
+#custom ppties
+taco:
+  orders:
+    pageSize: 25
+
+---
+spring:
+  profiles: prod
+
+logging:
+  level:
+    tacos: DEBUG
